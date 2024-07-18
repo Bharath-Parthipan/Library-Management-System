@@ -51,7 +51,7 @@ const BookForm = ({ book, addBook, updateBook, clearBook }) => {
             </div>
             <div>
               <label htmlFor="isbn">ISBN</label>
-              <Field id="isbn" name="isbn" type="text" />
+              <Field id="isbn" name="isbn" type="text" readOnly={!!book} />
               <ErrorMessage name="isbn" component="div" />
             </div>
             <div>

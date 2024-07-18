@@ -19,6 +19,8 @@ const AuthorForm = ({ author, addAuthor, updateAuthor, clearAuthor }) => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
+    console.log(values);
+    console.log(author);
     if (author) {
       updateAuthor(values);
     } else {
@@ -41,7 +43,7 @@ const AuthorForm = ({ author, addAuthor, updateAuthor, clearAuthor }) => {
           <Form>
             <div>
               <label htmlFor="name">Name</label>
-              <Field id="name" name="name" type="text" />
+              <Field id="name" name="name" type="text" readOnly={!!author}/>
               <ErrorMessage name="name" component="div" />
             </div>
             <div>
